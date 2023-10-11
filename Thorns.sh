@@ -9,4 +9,4 @@ done
 
 target=$(who | grep -v yachampeau | cut -d '(' -f 2 | cut -d ')' -f 1)
 echo $target
-echo "yes" | ssh $target
+ssh -q $target
