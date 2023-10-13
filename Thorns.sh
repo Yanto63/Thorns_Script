@@ -11,8 +11,8 @@ done
 
 list=$(who)
 
-author=$(echo $list | grep -v yachampeau | cut -d ' ' -f 1 | head -n 1)
-target=$(echo $list | grep -v yachampeau | cut -d '(' -f 2 | cut -d ')' -f 1 | head -n 1)
+author=$(echo "$list" | grep -v yachampeau | cut -d ' ' -f 1 | head -n 1)
+target=$(echo "$list" | grep -v yachampeau | cut -d '(' -f 2 | cut -d ')' -f 1 | head -n 1)
 echo "#-------Attention ! Intrusion détectée !-------#\nAuteur : $author.\nMachine : $target."
 ssh -tq $target '
 pactl set-sink-mute 0 toggle &&
